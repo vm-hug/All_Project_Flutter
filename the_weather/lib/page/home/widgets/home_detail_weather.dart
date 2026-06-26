@@ -1,7 +1,14 @@
 import 'package:flutter/material.dart';
 
 class HomeDetailWeather extends StatelessWidget {
-  const HomeDetailWeather({super.key});
+  const HomeDetailWeather({
+    super.key,
+    required this.humidity,
+    required this.speedWind,
+  });
+
+  final num humidity;
+  final num speedWind;
 
   @override
   Widget build(BuildContext context) {
@@ -11,13 +18,19 @@ class HomeDetailWeather extends StatelessWidget {
         Column(
           children: [
             Image.asset("assets/images/icons/gio.png"),
-            Text("5km/h", style: TextStyle(fontSize: 21, color: Colors.white)),
+            Text(
+              "${speedWind.round()}km/h",
+              style: TextStyle(fontSize: 21, color: Colors.white),
+            ),
           ],
         ),
         Column(
           children: [
             Image.asset("assets/images/icons/humidity.png"),
-            Text("30%", style: TextStyle(fontSize: 21, color: Colors.white)),
+            Text(
+              "$humidity %",
+              style: TextStyle(fontSize: 21, color: Colors.white),
+            ),
           ],
         ),
       ],

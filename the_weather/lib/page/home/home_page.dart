@@ -1,11 +1,24 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:the_weather/model/weather.dart';
 import 'package:the_weather/page/home/widgets/home_detail_weather.dart';
 import 'package:the_weather/page/home/widgets/home_loaction.dart';
 import 'package:the_weather/page/home/widgets/home_temperater.dart';
 import 'package:the_weather/page/home/widgets/home_weather_icon.dart';
+import 'package:the_weather/providers/weather_provider.dart';
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
   const HomePage({super.key});
+
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  @override
+  void initState() {
+    context.read<WeatherProvider>().getWeatherCurrent();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -19,15 +32,35 @@ class HomePage extends StatelessWidget {
             colors: [Color(0xff1D6CF3), Color(0xff19D2FE)],
           ),
         ),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            HomeWeatherIcon(),
-            HomeTemperater(),
-            HomeLocation(),
-            SizedBox(height: 40),
-            HomeDetailWeather(),
-          ],
+        child: FutureBuilder(
+          future: context.read<WeatherProvider>().getWeatherCurrent(),
+          builder: (BuildContext context, AsyncSnapshot snapshot) {
+            if (snapshot.connectionState == ConnectionState.waiting) {
+              return Center(child: CircularProgressIndicator());
+            }
+
+            if (!snapshot.hasData) {
+              return Container(child: Text("no data"));
+            }
+
+            WeatherData data = snapshot.data as WeatherData;
+
+            print(data.weather[0].main);
+
+            return Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                HomeWeatherIcon(nameIcon: data.weather[0].main),
+                HomeTemperater(temp: data.main.temp),
+                HomeLocation(nameLocation: data.name),
+                SizedBox(height: 40),
+                HomeDetailWeather(
+                  humidity: data.main.humidity,
+                  speedWind: data.wind.speed,
+                ),
+              ],
+            );
+          },
         ),
       ),
     );
