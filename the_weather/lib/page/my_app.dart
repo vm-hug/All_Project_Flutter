@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:geolocator/geolocator.dart';
 import 'package:provider/provider.dart';
 import 'package:the_weather/app/config/theme_custom.dart';
 import 'package:the_weather/page/bottom_navigate_custom/bottom_custom.dart';
@@ -6,12 +7,14 @@ import 'package:the_weather/page/home/home_page.dart';
 import 'package:the_weather/providers/weather_provider.dart';
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  const MyApp({super.key, required this.position});
+
+  final Position position;
 
   @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider(
-      create: (_) => WeatherProvider(),
+      create: (_) => WeatherProvider()..updatePosition(position),
       child: MaterialApp(
         theme: ThemeCustom.themeLight,
         debugShowCheckedModeBanner: false,

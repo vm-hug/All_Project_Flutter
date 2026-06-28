@@ -1,13 +1,14 @@
 import 'package:dio/dio.dart';
+import 'package:geolocator/geolocator.dart';
 import 'package:the_weather/app/utils/const.dart';
 import 'package:the_weather/model/weather.dart';
 
 class ApiRepository {
-  static Future<WeatherData> callApi() async {
+  static Future<WeatherData> callApi(Position? position) async {
     try {
       final dio = Dio();
       final res = await dio.get(
-        'https://api.openweathermap.org/data/2.5/weather?lat=16,04243&lon=108,10494&units=metric&appid=${MyKey.api_token}',
+        'https://api.openweathermap.org/data/2.5/weather?lat=${position?.latitude}&lon=${position?.longitude}&units=metric&appid=${MyKey.api_token}',
       );
       final data = res.data;
       WeatherData result = WeatherData.fromMap(data);
@@ -18,11 +19,11 @@ class ApiRepository {
     }
   }
 
-  static Future<List<WeatherDetail>> callApiDetail() async {
+  static Future<List<WeatherDetail>> callApiDetail(Position? position) async {
     try {
       final dio = Dio();
       final res = await dio.get(
-        'https://api.openweathermap.org/data/2.5/forecast?lat=16,04243&lon=108,10494&units=metric&appid=${MyKey.api_token}',
+        'https://api.openweathermap.org/data/2.5/forecast?lat=${position?.latitude}&lon=${position?.longitude}&units=metric&appid=${MyKey.api_token}',
       );
       List data = res.data['list'];
       List<WeatherDetail> result = List<WeatherDetail>.from(
