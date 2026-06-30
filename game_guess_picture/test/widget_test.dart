@@ -7,8 +7,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-
-import 'package:game_guess_picture/main.dart';
+import 'package:game_guess_picture/page/my_dart.dart' show MyApp;
 
 void main() {
   testWidgets('Counter increments smoke test', (WidgetTester tester) async {
