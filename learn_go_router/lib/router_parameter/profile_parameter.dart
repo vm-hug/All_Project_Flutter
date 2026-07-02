@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart' show GoRouterHelper;
+import 'package:go_router/go_router.dart';
 import 'package:learn_go_routers/router_name.dart';
 
-class ProfileQuery extends StatelessWidget {
+class ProfileParameter extends StatelessWidget {
   final String name;
-  const ProfileQuery({super.key, required this.name});
+  const ProfileParameter({super.key, required this.name});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Profile $name Query")),
+      appBar: AppBar(title: Text("Profile Parameter $name")),
       body: Center(
         child: ElevatedButton(
           onPressed: () {
