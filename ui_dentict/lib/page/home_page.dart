@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:ui_dentict/widgets/health_need.dart';
+import 'package:ui_dentict/widgets/nearby_doctor.dart';
 import 'package:ui_dentict/widgets/upcoming_card.dart';
 
 class HomePage extends StatelessWidget {
@@ -30,9 +32,16 @@ class HomePage extends StatelessWidget {
         children: [
           // upcoming card
           UpcomingCard(),
+          SizedBox(height: 20),
+          Text("Health Needs", style: Theme.of(context).textTheme.titleLarge),
+          SizedBox(height: 15),
           // heatlth Needs
-
+          HealthNeed(),
+          SizedBox(height: 20),
+          Text("Nearby Doctor", style: Theme.of(context).textTheme.titleLarge),
+          SizedBox(height: 15),
           // Nearby Doctor
+          NearbyDoctor(),
         ],
       ),
       bottomNavigationBar: BottomNavigationBar(
