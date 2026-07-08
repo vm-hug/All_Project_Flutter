@@ -14,28 +14,27 @@ class _CalendarPageState extends State<CalendarPage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: ListView(
-        padding: EdgeInsets.all(16),
-        children: [
-          CupertinoSlidingSegmentedControl(
-            padding: EdgeInsets.all(5),
-            groupValue: activeIndex,
-            children: const {
-              0: Text("Upcoming"),
-              1: Text("Complete"),
-              2: Text("Results"),
-            },
-            onValueChanged: (value) {
-              setState(() {
-                activeIndex = value!;
-              });
-            },
-          ),
-          SizedBox(height: 5),
-          AppointmentCard(),
-        ],
-      ),
+    // Bỏ Scaffold để lồng mượt mà vào MainLayout
+    return ListView(
+      padding: const EdgeInsets.all(16),
+      children: [
+        CupertinoSlidingSegmentedControl(
+          padding: const EdgeInsets.all(5),
+          groupValue: activeIndex,
+          children: const {
+            0: Text("Upcoming"),
+            1: Text("Complete"),
+            2: Text("Results"),
+          },
+          onValueChanged: (value) {
+            setState(() {
+              activeIndex = value!;
+            });
+          },
+        ),
+        const SizedBox(height: 5),
+        const AppointmentCard(),
+      ],
     );
   }
 }
