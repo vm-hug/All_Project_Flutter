@@ -24,3 +24,5 @@
 # Environment
 .env
 .env.*
+
+**/assets/
