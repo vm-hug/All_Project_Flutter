@@ -3,6 +3,8 @@ import 'package:get/state_manager.dart';
 import 'package:ui_ecommerce/controllers/theme_controller.dart';
 import 'package:ui_ecommerce/view/widgets/category_chips.dart';
 import 'package:ui_ecommerce/view/widgets/custom_search.dart';
+import 'package:ui_ecommerce/view/widgets/product_gird.dart';
+import 'package:ui_ecommerce/view/widgets/sale_banner.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -64,6 +66,29 @@ class HomeScreen extends StatelessWidget {
 
             const CustomSearch(),
             const CategoryChips(),
+            const SaleBanner(),
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  const Text(
+                    'Popular Product',
+                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                  ),
+                  GestureDetector(
+                    onTap: () {},
+                    child: Text(
+                      'See All',
+                      style: TextStyle(color: Theme.of(context).primaryColor),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+
+            // product gird
+            const Expanded(child: ProductGird()),
           ],
         ),
       ),
