@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/state_manager.dart';
 import 'package:ui_ecommerce/controllers/theme_controller.dart';
+import 'package:ui_ecommerce/view/widgets/category_chips.dart';
+import 'package:ui_ecommerce/view/widgets/custom_search.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -59,6 +61,9 @@ class HomeScreen extends StatelessWidget {
                 ],
               ),
             ),
+
+            const CustomSearch(),
+            const CategoryChips(),
           ],
         ),
       ),
