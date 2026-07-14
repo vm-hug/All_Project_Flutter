@@ -3,6 +3,7 @@ import 'package:get/get_navigation/src/extension_navigation.dart';
 import 'package:get/state_manager.dart';
 import 'package:ui_ecommerce/controllers/theme_controller.dart';
 import 'package:ui_ecommerce/view/all_products_screen.dart';
+import 'package:ui_ecommerce/view/cart_screen.dart';
 import 'package:ui_ecommerce/view/widgets/category_chips.dart';
 import 'package:ui_ecommerce/view/widgets/custom_search.dart';
 import 'package:ui_ecommerce/view/widgets/product_gird.dart';
@@ -49,7 +50,7 @@ class HomeScreen extends StatelessWidget {
                     icon: const Icon(Icons.notifications_outlined),
                   ),
                   IconButton(
-                    onPressed: () {},
+                    onPressed: () => Get.to(() => CartScreen()),
                     icon: const Icon(Icons.shopping_bag_outlined),
                   ),
                   GetBuilder<ThemeController>(
