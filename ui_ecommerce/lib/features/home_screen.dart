@@ -46,7 +46,7 @@ class HomeScreen extends StatelessWidget {
                   ),
                   const Spacer(),
                   IconButton(
-                    onPressed: () {},
+                    onPressed: () => Get.to(() => NotificationScreen()),
                     icon: const Icon(Icons.notifications_outlined),
                   ),
                   IconButton(

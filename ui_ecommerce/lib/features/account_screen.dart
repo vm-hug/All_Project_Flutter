@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:ui_ecommerce/controllers/auth_controller.dart';
 import 'package:ui_ecommerce/utils/app_textstyles.dart';
+import 'package:ui_ecommerce/view/setting_screen.dart';
 import 'package:ui_ecommerce/view/signin_screen.dart';
 
 class AccountScreen extends StatelessWidget {
@@ -23,7 +24,7 @@ class AccountScreen extends StatelessWidget {
         ),
         actions: [
           IconButton(
-            onPressed: () {},
+            onPressed: () => Get.to(() => SettingScreen()),
             icon: Icon(
               Icons.settings,
               color: isDark ? Colors.white : Colors.black,

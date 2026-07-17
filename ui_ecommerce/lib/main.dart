@@ -5,7 +5,7 @@ import 'package:ui_ecommerce/controllers/auth_controller.dart';
 import 'package:ui_ecommerce/controllers/navigation_controller.dart';
 import 'package:ui_ecommerce/controllers/theme_controller.dart';
 import 'package:ui_ecommerce/utils/app_themes.dart';
-import 'package:ui_ecommerce/view/splash_screen.dart';
+import 'package:ui_ecommerce/features/splash_screen.dart';
 
 void main() async {
   await GetStorage.init();
