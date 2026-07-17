@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:ui_ecommerce/controllers/navigation_controller.dart';
 import 'package:ui_ecommerce/controllers/theme_controller.dart';
-import 'package:ui_ecommerce/view/account_screen.dart';
-import 'package:ui_ecommerce/view/home_screen.dart';
-import 'package:ui_ecommerce/view/shopping_screen.dart';
-import 'package:ui_ecommerce/view/widgets/custom_bottom_navbar.dart';
-import 'package:ui_ecommerce/view/wishlist_screen.dart';
+import 'package:ui_ecommerce/features/account_screen.dart';
+import 'package:ui_ecommerce/features/home_screen.dart';
+import 'package:ui_ecommerce/features/shopping_screen.dart';
+import 'package:ui_ecommerce/features/widgets/custom_bottom_navbar.dart';
+import 'package:ui_ecommerce/features/wishlist_screen.dart';
 
 class MainScreen extends StatelessWidget {
   const MainScreen({super.key});

@@ -2,12 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:get/get_navigation/src/extension_navigation.dart';
 import 'package:get/state_manager.dart';
 import 'package:ui_ecommerce/controllers/theme_controller.dart';
-import 'package:ui_ecommerce/view/all_products_screen.dart';
-import 'package:ui_ecommerce/view/cart_screen.dart';
-import 'package:ui_ecommerce/view/widgets/category_chips.dart';
-import 'package:ui_ecommerce/view/widgets/custom_search.dart';
-import 'package:ui_ecommerce/view/widgets/product_gird.dart';
-import 'package:ui_ecommerce/view/widgets/sale_banner.dart';
+import 'package:ui_ecommerce/features/all_products_screen.dart';
+import 'package:ui_ecommerce/features/cart_screen.dart';
+import 'package:ui_ecommerce/features/notifications/views/notification_screen.dart';
+import 'package:ui_ecommerce/features/widgets/category_chips.dart';
+import 'package:ui_ecommerce/features/widgets/custom_search.dart';
+import 'package:ui_ecommerce/features/widgets/product_gird.dart';
+import 'package:ui_ecommerce/features/widgets/sale_banner.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});

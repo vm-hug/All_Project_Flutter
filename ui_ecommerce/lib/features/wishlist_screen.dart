@@ -1,4 +1,3 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:ui_ecommerce/models/products.dart';
 import 'package:ui_ecommerce/utils/app_textstyles.dart';

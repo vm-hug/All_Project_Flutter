@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:ui_ecommerce/controllers/auth_controller.dart';
 import 'package:ui_ecommerce/utils/app_textstyles.dart';
-import 'package:ui_ecommerce/view/setting_screen.dart';
-import 'package:ui_ecommerce/view/signin_screen.dart';
+import 'package:ui_ecommerce/features/setting_screen.dart';
+import 'package:ui_ecommerce/features/signin_screen.dart';
 
 class AccountScreen extends StatelessWidget {
   const AccountScreen({super.key});

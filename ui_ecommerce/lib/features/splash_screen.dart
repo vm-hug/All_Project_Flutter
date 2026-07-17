@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:ui_ecommerce/controllers/auth_controller.dart';
-import 'package:ui_ecommerce/view/main_screen.dart';
-import 'package:ui_ecommerce/view/onboarding_screen.dart';
-import 'package:ui_ecommerce/view/signin_screen.dart';
+import 'package:ui_ecommerce/features/main_screen.dart';
+import 'package:ui_ecommerce/features/onboarding_screen.dart';
+import 'package:ui_ecommerce/features/signin_screen.dart';
 
 class SplashScreen extends StatelessWidget {
   SplashScreen({super.key});

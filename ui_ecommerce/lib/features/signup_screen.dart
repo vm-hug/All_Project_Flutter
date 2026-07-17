@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:ui_ecommerce/utils/app_textstyles.dart';
-import 'package:ui_ecommerce/view/main_screen.dart';
-import 'package:ui_ecommerce/view/signin_screen.dart';
-import 'package:ui_ecommerce/view/widgets/custom_textfield.dart';
+import 'package:ui_ecommerce/features/main_screen.dart';
+import 'package:ui_ecommerce/features/signin_screen.dart';
+import 'package:ui_ecommerce/features/widgets/custom_textfield.dart';
 
 class SignUpScreen extends StatelessWidget {
   final TextEditingController _nameController = TextEditingController();

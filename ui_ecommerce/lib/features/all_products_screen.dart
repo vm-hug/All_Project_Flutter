@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:ui_ecommerce/utils/app_textstyles.dart';
-import 'package:ui_ecommerce/view/widgets/filter_bottom_sheet.dart';
-import 'package:ui_ecommerce/view/widgets/product_gird.dart';
+import 'package:ui_ecommerce/features/widgets/filter_bottom_sheet.dart';
+import 'package:ui_ecommerce/features/widgets/product_gird.dart';
 
 class AllProductsScreen extends StatelessWidget {
   const AllProductsScreen({super.key});

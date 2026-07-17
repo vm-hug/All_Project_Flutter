@@ -4,10 +4,10 @@ import 'package:get/route_manager.dart';
 import 'package:get/utils.dart';
 import 'package:ui_ecommerce/controllers/auth_controller.dart';
 import 'package:ui_ecommerce/utils/app_textstyles.dart';
-import 'package:ui_ecommerce/view/forgot_password_screen.dart';
-import 'package:ui_ecommerce/view/main_screen.dart';
-import 'package:ui_ecommerce/view/signup_screen.dart';
-import 'package:ui_ecommerce/view/widgets/custom_textfield.dart';
+import 'package:ui_ecommerce/features/forgot_password_screen.dart';
+import 'package:ui_ecommerce/features/main_screen.dart';
+import 'package:ui_ecommerce/features/signup_screen.dart';
+import 'package:ui_ecommerce/features/widgets/custom_textfield.dart';
 
 class SigninScreen extends StatelessWidget {
   final TextEditingController _emailController = TextEditingController();

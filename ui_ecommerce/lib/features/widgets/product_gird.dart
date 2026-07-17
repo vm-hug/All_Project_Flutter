@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:ui_ecommerce/models/products.dart';
-import 'package:ui_ecommerce/view/product_detail_screen.dart';
-import 'package:ui_ecommerce/view/widgets/product_card.dart';
+import 'package:ui_ecommerce/features/product_detail_screen.dart';
+import 'package:ui_ecommerce/features/widgets/product_card.dart';
 
 class ProductGird extends StatelessWidget {
   const ProductGird({super.key});
