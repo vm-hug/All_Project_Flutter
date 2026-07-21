@@ -29,9 +29,12 @@ class ShippingAddressScreen extends StatelessWidget {
           ),
         ),
         actions: [
-          Icon(
-            Icons.add_circle_outline,
-            color: isDark ? Colors.white : Colors.black,
+          IconButton(
+            onPressed: () => _showAddAddressBottomSheet(context),
+            icon: Icon(
+              Icons.add_circle_outline,
+              color: isDark ? Colors.white : Colors.black,
+            ),
           ),
         ],
       ),
@@ -210,6 +213,165 @@ class ShippingAddressScreen extends StatelessWidget {
               decoration: BoxDecoration(
                 color: Colors.red.withValues(alpha: 0.1),
                 shape: BoxShape.circle,
+              ),
+              child: Icon(Icons.delete_outline, color: Colors.red, size: 32),
+            ),
+            const SizedBox(height: 16),
+            Text(
+              'Delete Address',
+              style: AppTextstyles.withColor(
+                AppTextstyles.h3,
+                Theme.of(context).textTheme.bodyLarge!.color!,
+              ),
+            ),
+            const SizedBox(height: 16),
+            Text(
+              'Are you sure you want to delete this this address? ',
+              textAlign: TextAlign.center,
+              style: AppTextstyles.withColor(
+                AppTextstyles.bodyMedium,
+                isDark ? Colors.grey[400]! : Colors.grey[600]!,
+              ),
+            ),
+            SizedBox(height: 24),
+            Row(
+              children: [
+                Expanded(
+                  child: OutlinedButton(
+                    onPressed: () {},
+                    style: OutlinedButton.styleFrom(
+                      padding: EdgeInsets.symmetric(vertical: 16),
+                      side: BorderSide(
+                        color: isDark ? Colors.grey[700]! : Colors.grey[300]!,
+                      ),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(12),
+                      ),
+                    ),
+                    child: Text(
+                      "Cancel",
+                      style: AppTextstyles.withColor(
+                        AppTextstyles.buttonMedium,
+                        Theme.of(context).textTheme.bodyLarge!.color!,
+                      ),
+                    ),
+                  ),
+                ),
+                SizedBox(width: 16),
+                Expanded(
+                  child: ElevatedButton(
+                    onPressed: () {},
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.red,
+                      padding: EdgeInsets.symmetric(vertical: 16),
+                      elevation: 0,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(12),
+                      ),
+                    ),
+                    child: Text(
+                      "Cancel",
+                      style: AppTextstyles.withColor(
+                        AppTextstyles.buttonMedium,
+                        Colors.white,
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ],
+        ),
+      ),
+      barrierColor: Colors.black54,
+    );
+  }
+
+  void _showAddAddressBottomSheet(BuildContext context) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+
+    Get.bottomSheet(
+      Container(
+        padding: EdgeInsets.all(24),
+        decoration: BoxDecoration(
+          color: Theme.of(context).scaffoldBackgroundColor,
+          borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
+        ),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  'Add New Address',
+                  style: AppTextstyles.withColor(
+                    AppTextstyles.h3,
+                    Theme.of(context).textTheme.bodyLarge!.color!,
+                  ),
+                ),
+                IconButton(
+                  onPressed: () => Get.back(),
+                  icon: Icon(
+                    Icons.close,
+                    color: isDark ? Colors.white : Colors.black,
+                  ),
+                ),
+              ],
+            ),
+            const SizedBox(height: 24),
+            _buildTextField(
+              context,
+              'Label (e.g. Home , Office)',
+              Icons.label_outline,
+            ),
+            const SizedBox(height: 16),
+            _buildTextField(
+              context,
+              'Full Address',
+              Icons.location_on_outlined,
+            ),
+            const SizedBox(height: 16),
+            _buildTextField(context, 'City', Icons.location_city_outlined),
+            const SizedBox(height: 16),
+            Row(
+              children: [
+                Expanded(
+                  child: _buildTextField(context, 'State', Icons.map_outlined),
+                ),
+                const SizedBox(width: 16),
+                Expanded(
+                  child: _buildTextField(
+                    context,
+                    'Zip Code',
+                    Icons.pin_outlined,
+                  ),
+                ),
+              ],
+            ),
+            const SizedBox(height: 24),
+            SizedBox(
+              width: double.infinity,
+              child: ElevatedButton(
+                onPressed: () {
+                  // handle update
+                  Get.back();
+                },
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Theme.of(context).primaryColor,
+                  padding: EdgeInsets.symmetric(vertical: 16),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                ),
+                child: Text(
+                  'Add Adress',
+                  style: AppTextstyles.withColor(
+                    AppTextstyles.buttonMedium,
+                    Colors.white,
+                  ),
+                ),
               ),
             ),
           ],
